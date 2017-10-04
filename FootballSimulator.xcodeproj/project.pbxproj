@@ -13,6 +13,8 @@
 		D83C59B11F8492110050055C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83C59B01F8492110050055C /* Assets.xcassets */; };
 		D83C59B41F8492110050055C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83C59B21F8492110050055C /* LaunchScreen.storyboard */; };
 		D83C59C01F85114D0050055C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59BF1F85114D0050055C /* ResultViewController.swift */; };
+		D83C59C21F8539A40050055C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59C11F8539A40050055C /* Team.swift */; };
+		D83C59C41F8539B30050055C /* Championship.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59C31F8539B30050055C /* Championship.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D83C59B31F8492110050055C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D83C59B51F8492110050055C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D83C59BF1F85114D0050055C /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D83C59C11F8539A40050055C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D83C59C31F8539B30050055C /* Championship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Championship.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		D83C59BC1F84F64D0050055C /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D83C59C11F8539A40050055C /* Team.swift */,
+				D83C59C31F8539B30050055C /* Championship.swift */,
 			);
 			name = BusinessLayer;
 			sourceTree = "<group>";
@@ -157,8 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83C59AC1F8492110050055C /* HomeViewController.swift in Sources */,
+				D83C59C41F8539B30050055C /* Championship.swift in Sources */,
 				D83C59AA1F8492110050055C /* AppDelegate.swift in Sources */,
 				D83C59C01F85114D0050055C /* ResultViewController.swift in Sources */,
+				D83C59C21F8539A40050055C /* Team.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

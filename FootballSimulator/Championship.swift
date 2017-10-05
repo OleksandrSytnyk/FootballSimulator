@@ -12,11 +12,14 @@ public struct Championship {
     
     var teams: [Team] = []
     
-    var teamsPositions: [String: Int] {
-        return ["": 0]
+    var teamsPositions: [(Team, Int)] {
+        
+        
+        return [(Team(), 0)]
     }
     
 }
 
 // First place should take the team with the highest points score, last place with lowest
 //If several teams have the same score then they should be sorted by the name in ascending order
+//var sortedArray = [1, 5, 2].sort(ascending) // [1,2,5]

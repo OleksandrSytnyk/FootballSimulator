@@ -12,8 +12,12 @@ class HomeViewController: UIViewController {
     
     @IBOutlet public var tableView: UITableView?
     @IBOutlet public var simulateButton: UIButton?
+    @IBOutlet public var addTeamButton: UIButton?
+    @IBOutlet public var addTeamTextField: UITextField?
+    
     
     let ShowResult = "ShowResult"
+    var teams: [Team] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +34,20 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
             if segue.identifier == ShowResult {
-                
-                
-            }
         
-
+            }
     }
     
+    @IBAction func addTeam(_ sender: UIButton) {
+        let team = Team()
+        
+        if let name = addTeamTextField?.text, !name.isEmpty {
+            team.name = name
+            teams.append(team)
+        }
+        
+     
+    }
 }
 
 
@@ -55,4 +66,6 @@ extension HomeViewController : UITableViewDataSource {
         return cell
     }
 }
+
+/**/
 

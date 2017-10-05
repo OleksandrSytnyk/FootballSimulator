@@ -44,6 +44,9 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYU-Dg-Lxa" userLabel="Add">
                                                 <rect key="frame" x="293" y="0.0" width="22" height="30"/>
+                                                <connections>
+                                                    <action selector="addTeam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSM-PH-X1E"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -122,6 +125,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="srw-cK-PWy"/>
                     <connections>
+                        <outlet property="addTeamButton" destination="DYU-Dg-Lxa" id="CWK-N6-h96"/>
+                        <outlet property="addTeamTextField" destination="8iB-oK-Stv" id="K0V-lb-Xyw"/>
                         <outlet property="simulateButton" destination="J09-5U-Yub" id="t3u-vl-AwE"/>
                         <outlet property="tableView" destination="9VH-xl-SK0" id="OeD-gg-Ldw"/>
                         <segue destination="Lq9-JG-Uqp" kind="show" identifier="ShowResult" id="wP3-Aw-PdY"/>

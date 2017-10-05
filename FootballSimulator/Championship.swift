@@ -10,12 +10,22 @@ import Foundation
 
 public struct Championship {
     
+    static let shared: Championship = {
+        let instance = Championship()
+        return instance
+    }()
+    
     var teams: [Team] = []
     
     var teamsPositions: [(Team, Int)] {
         
         
         return [(Team(), 0)]
+    }
+    
+    func nextTeamID() -> Int {
+        
+        return Championship.shared.teams.count
     }
     
 }

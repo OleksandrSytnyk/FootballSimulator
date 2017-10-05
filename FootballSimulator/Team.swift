@@ -8,7 +8,8 @@
 
 import Foundation
 
- class Team {
+class Team: Equatable {
+    var ID: Int
     var name = ""
     var gamesWon = 0
     var gamesDrawn = 0
@@ -19,5 +20,13 @@ import Foundation
     }
     var points: Int {
         return ( 3 * gamesWon + gamesDrawn)
+    }
+    
+    init() {
+      self.ID = Championship.shared.nextTeamID()
+    }
+    
+    static func ==(lhs: Team, rhs: Team) -> Bool {
+        return lhs === rhs
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82FAFCD1F86278800211B19 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FAFCC1F86278800211B19 /* TeamCell.swift */; };
+		D82FAFCF1F86448A00211B19 /* BusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FAFCE1F86448A00211B19 /* BusinessManager.swift */; };
+		D82FAFD11F865AA100211B19 /* AddEditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FAFD01F865AA100211B19 /* AddEditTeamViewController.swift */; };
 		D83C59AA1F8492110050055C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59A91F8492110050055C /* AppDelegate.swift */; };
 		D83C59AC1F8492110050055C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59AB1F8492110050055C /* HomeViewController.swift */; };
 		D83C59AF1F8492110050055C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83C59AD1F8492110050055C /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D82FAFCC1F86278800211B19 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		D82FAFCE1F86448A00211B19 /* BusinessManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessManager.swift; sourceTree = "<group>"; };
+		D82FAFD01F865AA100211B19 /* AddEditTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTeamViewController.swift; sourceTree = "<group>"; };
 		D83C59A61F8492110050055C /* FootballSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C59A91F8492110050055C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D83C59AB1F8492110050055C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82FAFC81F8626BF00211B19 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D83C59AB1F8492110050055C /* HomeViewController.swift */,
+				D83C59BF1F85114D0050055C /* ResultViewController.swift */,
+				D82FAFD01F865AA100211B19 /* AddEditTeamViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D82FAFC91F8626E600211B19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D82FAFCC1F86278800211B19 /* TeamCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		D83C599D1F8492110050055C = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +98,8 @@
 		D83C59BB1F84F5F80050055C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				D83C59AB1F8492110050055C /* HomeViewController.swift */,
-				D83C59BF1F85114D0050055C /* ResultViewController.swift */,
+				D82FAFC91F8626E600211B19 /* Views */,
+				D82FAFC81F8626BF00211B19 /* ViewControllers */,
 			);
 			name = PresentationLayer;
 			sourceTree = "<group>";
@@ -85,6 +109,7 @@
 			children = (
 				D83C59C11F8539A40050055C /* Team.swift */,
 				D83C59C31F8539B30050055C /* Championship.swift */,
+				D82FAFCE1F86448A00211B19 /* BusinessManager.swift */,
 			);
 			name = BusinessLayer;
 			sourceTree = "<group>";
@@ -162,11 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82FAFD11F865AA100211B19 /* AddEditTeamViewController.swift in Sources */,
 				D83C59AC1F8492110050055C /* HomeViewController.swift in Sources */,
 				D83C59C41F8539B30050055C /* Championship.swift in Sources */,
 				D83C59AA1F8492110050055C /* AppDelegate.swift in Sources */,
+				D82FAFCD1F86278800211B19 /* TeamCell.swift in Sources */,
 				D83C59C01F85114D0050055C /* ResultViewController.swift in Sources */,
 				D83C59C21F8539A40050055C /* Team.swift in Sources */,
+				D82FAFCF1F86448A00211B19 /* BusinessManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

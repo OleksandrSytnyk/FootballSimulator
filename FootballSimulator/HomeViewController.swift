@@ -85,6 +85,7 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         if let index = teams.index(of: team) {
             teams[index] = team
         }
+        tableView?.reloadData()
         dismiss(animated: true, completion: nil)
     }
 

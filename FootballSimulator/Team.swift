@@ -27,6 +27,6 @@ class Team: Equatable {
     }
     
     static func ==(lhs: Team, rhs: Team) -> Bool {
-        return lhs === rhs
+        return lhs.ID == rhs.ID
     }
 }

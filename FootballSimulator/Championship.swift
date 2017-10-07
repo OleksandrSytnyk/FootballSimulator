@@ -8,24 +8,35 @@
 
 import Foundation
 
-public struct Championship {
+class Championship {
     
-    static let shared: Championship = {
+    public static let shared: Championship = {
         let instance = Championship()
         return instance
     }()
     
     var teams: [Team] = []
     
-    var teamsPositions: [(Team, Int)] {
+    var teamsPositions: [Team: Int] {
         
         
-        return [(Team(), 0)]
+        return [Team(): 0]
     }
     
     func nextTeamID() -> Int {
-        
-        return Championship.shared.teams.count
+        return Championship.shared.teams.count + 1
+    }
+    
+    func startChampionship() {
+        for team1 in teams {
+            for team2 in teams {
+                
+                let game = Game()
+                game.play(team1: team1, team2: team2)
+                
+            }
+            
+        }//TODO: map
     }
     
 }

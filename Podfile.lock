@@ -1,0 +1,12 @@
+PODS:
+  - GlyuckDataGrid (0.3.0)
+
+DEPENDENCIES:
+  - GlyuckDataGrid
+
+SPEC CHECKSUMS:
+  GlyuckDataGrid: 3c0a025f62438e1a56aa84326c26906ebabda710
+
+PODFILE CHECKSUM: e0ae9c397b45be07d499c00656ac5d8b8b7e8710
+
+COCOAPODS: 1.2.0

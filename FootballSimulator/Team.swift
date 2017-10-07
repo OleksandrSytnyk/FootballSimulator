@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Team: Equatable {
-    var ID: Int
+class Team: Equatable, Hashable {
+    var id: Int
     var name = ""
     var gamesWon = 0
     var gamesDrawn = 0
@@ -22,11 +22,22 @@ class Team: Equatable {
         return ( 3 * gamesWon + gamesDrawn)
     }
     
+    var goalsForward = 0
+    var goalsAgainst = 0
+    
+    var goalsDifference: Int {
+        return goalsForward - goalsAgainst
+    }
+
     init() {
-      self.ID = Championship.shared.nextTeamID()
+      self.id = Championship.shared.nextTeamID()
+    }
+    
+    var hashValue: Int {
+        return self.id
     }
     
     static func ==(lhs: Team, rhs: Team) -> Bool {
-        return lhs.ID == rhs.ID
+        return lhs.id == rhs.id
     }
 }

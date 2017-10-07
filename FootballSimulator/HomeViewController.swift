@@ -14,20 +14,18 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
     @IBOutlet public var simulateButton: UIButton?
     @IBOutlet public var addTeamButton: UIBarButtonItem?
    
-    //var addEdit = ""
-    
-//    public static let add = "add"
-//    public static let edit = "edit"
+
     let showAddEdit = "ShowAddEdit"
     let showResult = "ShowResult"
-    var teams: [Team] = []
+    
+    var teams = Championship.shared.teams
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
         
-        let businessManager = BusinessManager()
-        teams = businessManager.setHardCodedTeams()
+//        let dataManager = DataManager()
+//        teams = dataManager.setHardCodedTeams()
         if tableView?.dataSource == nil {
             tableView?.dataSource = self
         }
@@ -68,26 +66,20 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func addEditTeamViewController(_ controller: AddEditTeamViewController,
-                                  didFinishAdding team: Team) {
-        let newRowIndex = teams.count
-        teams.append(team)
-        
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView?.insertRows(at: indexPaths, with: .automatic)
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func addEditTeamViewController(_ controller: AddEditTeamViewController,
-                                  didFinishEditing team: Team) {
-        if let index = teams.index(of: team) {
-            teams[index] = team
-        }
+    func addEditTeamViewController(_ controller: AddEditTeamViewController) {
+       teams = Championship.shared.teams
         tableView?.reloadData()
         dismiss(animated: true, completion: nil)
     }
+    
+//    func addEditTeamViewController(_ controller: AddEditTeamViewController,
+//                                  didFinishEditing team: Team) {
+//        if let index = teams.index(of: team) {
+//            teams[index] = team
+//        }
+//        tableView?.reloadData()
+//        dismiss(animated: true, completion: nil)
+//    }
 
 }
 

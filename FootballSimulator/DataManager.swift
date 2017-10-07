@@ -37,15 +37,15 @@ class DataManager {
         return teamsAsResults
     }
     
-    func transformTeamsToTeamsAsResults( championship: Championship) -> [TeamAsResult] {
+    func transformTeamsToTeamsAsResults() -> [TeamAsResult] {
         var teamsAsResults: [TeamAsResult] = []
-        let teams = championship.teams
+        let teams = Championship.teams
         
         for team in teams {
             var teamAsResult = TeamAsResult()
             //Don't change the order to append
             
-            teamAsResult.dataList["position"] = String(String(describing: championship.teamsPositions[team]))
+            teamAsResult.dataList["position"] = String(String(describing: Championship.teamsPositions[team]))
             teamAsResult.dataList["name"] = team.name
             teamAsResult.dataList["gamesPlayed"] = String(team.gamesPlayed)
             teamAsResult.dataList["gamesWon"] = String(team.gamesWon)

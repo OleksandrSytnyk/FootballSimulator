@@ -10,9 +10,7 @@ import UIKit
 
 protocol AddEditTeamViewControllerDelegate: class {
     func addEditTeamViewControllerDidCancel(_ controller: AddEditTeamViewController)
-    //func addEditTeamViewController(_ controller: AddEditTeamViewController,
-     //                              didFinishAdding team: Team)
-    func addEditTeamViewController(_ controller: AddEditTeamViewController)
+    func addEditTeamViewControllerDidAddEdit(_ controller: AddEditTeamViewController, didFinishAddingEditing teamName: String)
 }
 
 class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
@@ -20,8 +18,8 @@ class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
      @IBOutlet public var textField: UITextField?
     //var addEdit = ""
     var delegate: AddEditTeamViewControllerDelegate?
-    var teamToEdit: Team?
-    var teams = Championship.shared.teams
+    var teamToEditName: String?
+    //var teams = Championship.shared.teams
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +27,14 @@ class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
         self.textField?.delegate = self
         textField?.becomeFirstResponder()
         
-        if let teamToEdit = teamToEdit {
-        textField?.text = teamToEdit.name
+        if let teamToEditName = teamToEditName {
+        textField?.text = teamToEditName
         }
         // Do any additional setup after loading the view.
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() 
+        textField.resignFirstResponder()
         saveTeam()
         return true
     }
@@ -51,20 +49,16 @@ class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveTeam() {
-        if let teamToEdit = teamToEdit {
-            guard let text = textField?.text, let index = teams.index(of: teamToEdit) else {return}
-            teamToEdit.name = text
-            teams[index] = teamToEdit
-            
+        var teamName = ""
+        if let _ = teamToEditName {
+            guard let text = textField?.text else {return}
+            teamName = text
             //delegate?.addEditTeamViewController(self, didFinishEditing: teamToEdit)
         } else {
-            let team = Team()
             guard let text = textField?.text else {return}
-            team.name = text
-            //teams.append(team)
-            Championship.shared.teams.append(team)
+            teamName = text
         }
-        delegate?.addEditTeamViewController(self)
+        delegate?.addEditTeamViewControllerDidAddEdit(self, didFinishAddingEditing: teamName)
     }
     
 

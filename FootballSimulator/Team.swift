@@ -30,7 +30,7 @@ class Team: Equatable, Hashable {
     }
 
     init() {
-      self.id = Championship.shared.nextTeamID()
+      self.id = Championship.nextTeamID
     }
     
     var hashValue: Int {

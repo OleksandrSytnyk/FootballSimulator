@@ -25,7 +25,6 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         if goneToResults {
         goneToResults = false
         Championship.games = []
-        //Championship.nextTeamID = 0
         Championship.teams = []
         Championship.teamsPositions = [:]
         tableView?.dataSource = nil
@@ -38,21 +37,28 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-//        let dataManager = DataManager()
-//        teams = dataManager.setHardCodedTeams()
-        if tableView?.dataSource == nil {
-            tableView?.dataSource = self
-        }
-        if tableView?.delegate == nil {
-            tableView?.delegate = self
-        }
+        tableView?.dataSource = self
+        tableView?.delegate = self
     }
     
     @IBAction func simulate(_ sender: UIButton) {
-        goneToResults = true
-    performSegue(withIdentifier: showResult, sender: sender)
+        
+      guard (teamsNames.count < 4) || (teamsNames.count > 8) else {
+            goneToResults = true
+            performSegue(withIdentifier: showResult, sender: sender)
+            return
+        }
+        showNumberOfTeamRequest()
+    }
+    
+    func showNumberOfTeamRequest() {
+        let alert = UIAlertController(
+            title: NSLocalizedString("Sorry...", comment: "Error alert: title"),
+            message: NSLocalizedString("To continue, you have to choose from 4 to 8 clubs to participate. Use the '+' button for this.", comment: "Validation alert: message"), preferredStyle: .alert)
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Validation alert: OK"), style: .default, handler: nil)
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addTeam(_ sender: UIButton) {
@@ -68,6 +74,10 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
             let navigationController = segue.destination as? UINavigationController
             let controller = navigationController?.topViewController as? AddEditTeamViewController
             controller?.delegate = self
+            
+            if teamsNames.count != 0 {
+                controller?.teamNames = teamsNames
+            }
             
             if let indexPath = sender as? IndexPath {
                 let teamToEditName = teamsNames[indexPath.row]
@@ -98,7 +108,6 @@ extension HomeViewController : UITableViewDataSource {
     
     //MARK: UITableViewDataSource
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teamsNames.count
     }
@@ -107,28 +116,23 @@ extension HomeViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "TeamCell", for: indexPath)
             let teamName = teamsNames[indexPath.row]
-            //TODO: decouple code: String(indexPath.row) + "." + team.name
             cell.textLabel?.text = teamName
-        
         return cell
     }
 }
 
 extension HomeViewController : UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: showAddEdit, sender: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCellEditingStyle,
-                            forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         teamsNames.remove(at: indexPath.row)
-        
+
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-        }
+    }
 }
 

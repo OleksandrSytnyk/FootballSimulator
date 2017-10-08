@@ -16,17 +16,13 @@ class ResultViewController: UIViewController, DataGridViewDataSource, DataGridVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //teams = DataManager.shared.hardCodedTeams()
+        self.navigationItem.title = "Championship" 
         
          let dataGridView = DataGridView(frame: view.bounds)
          view.addSubview(dataGridView)
-        // You'll need to setup constraints for just created view
          dataGridView.translatesAutoresizingMaskIntoConstraints = false
          view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-70.0-[dataGridView]-0.0-|", options: [], metrics: [:], views: ["dataGridView": dataGridView]))
          view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0.0-[dataGridView]-0.0-|", options: [], metrics: [:], views: ["dataGridView": dataGridView]))
-        
-        
-        
         dataGridView.dataSource = self
         dataGridView.delegate = self
     }
@@ -57,5 +53,9 @@ class ResultViewController: UIViewController, DataGridViewDataSource, DataGridVi
     
     func dataGridView(_ dataGridView: DataGridView, widthForColumn column: Int) -> CGFloat {
         return DataSource.columnsWidths[column]
+    }
+    
+    func dataGridView(_ dataGridView: DataGridView, shouldFloatColumn column: Int) -> Bool {
+        return column == 1
     }
 }

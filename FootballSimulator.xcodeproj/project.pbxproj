@@ -83,13 +83,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		D82FAFC91F8626E600211B19 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		D83C599D1F8492110050055C = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +119,6 @@
 		D83C59BB1F84F5F80050055C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				D82FAFC91F8626E600211B19 /* Views */,
 				D82FAFC81F8626BF00211B19 /* ViewControllers */,
 			);
 			name = PresentationLayer;

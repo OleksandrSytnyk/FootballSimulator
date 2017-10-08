@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Teams-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FootballSimulator" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,10 +23,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J09-5U-Yub">
                                 <rect key="frame" x="15" y="588" width="345" height="39"/>
-                                <color key="backgroundColor" red="0.53410532994923865" green="0.33532516131463447" blue="0.14877156664063426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.65321802200000001" green="0.90550452469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Simulate"/>
+                                <state key="normal" title="Simulate">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="simulate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m3u-A8-hST"/>
                                 </connections>
@@ -61,7 +63,7 @@
                             <constraint firstItem="1TV-a9-MT4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xIw-21-bzq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="srw-cK-PWy">
+                    <navigationItem key="navigationItem" title="Teams" id="srw-cK-PWy">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="76i-Dm-r4V">
                             <connections>
                                 <action selector="addTeam:" destination="BYZ-38-t0r" id="hTf-mC-C07"/>

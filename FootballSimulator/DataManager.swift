@@ -15,28 +15,6 @@ class DataManager {
         return instance
     }()
     
-   func setHardCodedTeams() -> [Team] {
-    var teams: [Team] = []
-    for index in 1...8 {
-        let team = Team()
-        team.name = "Team" + String(index)
-        teams.append(team)
-    }
-    return teams
-    }
-    
-    func hardCodedTeams() -> [TeamAsResult] {
-        var teamsAsResults: [TeamAsResult] = []
-        var teamAsResult = TeamAsResult()
-        var list1 = ["position": "1", "teamName": "Team1", "gamesPlayed": "3", "gamesWon": "2", "gamesDrawn": "1", "gamesLost": "0", "points": "3", "goalsForward": "2", "goalsAgainst": "1", "goalsDifference": "0"]
-        teamAsResult.dataList = list1
-        teamsAsResults.append(teamAsResult)
-         list1 = ["position": "2", "teamName": "Team2", "gamesPlayed": "5", "gamesWon": "2", "gamesDrawn": "3", "gamesLost": "0", "points": "3", "goalsForward": "2", "goalsAgainst": "1", "goalsDifference": "0"]
-        teamAsResult.dataList = list1
-        teamsAsResults.append(teamAsResult)
-        return teamsAsResults
-    }
-    
     func startChampionship(teamsNames: [String])  -> [TeamAsResult] {
         createChampionship(teamsNames: teamsNames)
         Championship.startChampionship()
@@ -89,19 +67,23 @@ class DataManager {
                 Championship.teams[index].gamesLost = gamesLost
             }
         }
-        let sortedTeams = Championship.teams.sorted(by: sorterForTeams)
-       
-        for index in 0...sortedTeams.count - 1 {
-            Championship.teamsPositions[sortedTeams[index]] = index + 1
-            print("team:\(sortedTeams[index].id), posts: \(index + 1)")
-        }
-        
-        
-    
-    
+        sortTeams()
     }
         
-
+    func sortTeams() {
+        
+        let sortedTeamsToDefinePositions = Championship.teams.sorted(by: sorterForTeams)
+        
+        for index in 0...sortedTeamsToDefinePositions.count - 1 {
+            Championship.teamsPositions[sortedTeamsToDefinePositions[index]] = index + 1
+        }
+        
+        var sortedTeams: [Team] = []
+        for position in 1...Championship.teams.count {
+            sortedTeams.append(Championship.teamsPositions.filter { $1 == position }.map { $0.0 }[0])
+        }
+        Championship.teams = sortedTeams
+    }
 
     func sorterForTeams(this:Team, that:Team) -> Bool {
         
@@ -116,8 +98,6 @@ class DataManager {
         for teamName in teamsNames {
             let team = Team()
             team.name = teamName
-            //Delete this line
-            Championship.teamsPositions[team] = 0
             Championship.teams.append(team)
         }
     }
@@ -145,9 +125,7 @@ class DataManager {
             teamsAsResults.append(teamAsResult)
         }
         return teamsAsResults
-    }
-    
-    
+    } 
 }
 
 

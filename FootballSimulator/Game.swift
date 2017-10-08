@@ -8,30 +8,23 @@
 
 import Foundation
 
-class Game {
+class Game: Equatable {
     
-    static let maxNumberGoalsPerGame = 10
+    static let maxNumberGoalsPerGame = 5
+    var team1: Team
+    var team2: Team
+    //if the score is positive it means team1 won.
+    var score: Int
     
-    func play(team1: Team, team2: Team) -> Int {
-        var score = 0
-       
-
-//        var 
-//        arc4random()
-//        arc4random_uniform(<#UInt32#>)
-        //let rand = Int(arc4random_uniform(10))
-        return score
+    init( team1: Team, team2: Team) {
+        self.team1 = team1
+        self.team2 = team2
+       let team1Goals = Int(arc4random_uniform(UInt32(Game.maxNumberGoalsPerGame)))
+        let team2Goals = Int(arc4random_uniform(UInt32(Game.maxNumberGoalsPerGame)))
+        self.score = team1Goals - team2Goals
     }
     
-//    var u1 = Double(arc4random()) / UINT32_MAX
-//    // uniform distribution
-//    var u2 = Double(arc4random()) / UINT32_MAX
-//    // uniform distribution
-//    var f1: Double = sqrt(-2 * log(u1))
-//    var f2: Double = 2 * .pi * u2
-//    var g1: Double = f1 * cos(f2)
-//    // gaussian distribution
-//    var g2: Double = f1 * sin(f2)
-//    // gaussian distribution
-
+    static func ==(lhs: Game, rhs: Game) -> Bool {
+        return ((lhs.team1.id == rhs.team1.id)&&(lhs.team2.id == rhs.team2.id))||((lhs.team1.id == rhs.team2.id)&&(lhs.team2.id == rhs.team1.id))
+    }
 }

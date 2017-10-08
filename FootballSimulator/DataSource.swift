@@ -13,5 +13,5 @@ class DataSource {
     
     static let columnsTitles = ["#", "Team", "P", "W", "D", "L", "Pts", "GF", "GA", "GD"]
     static let columns = ["position", "teamName", "gamesPlayed", "gamesWon", "gamesDrawn", "gamesLost", "points", "goalsForward", "goalsAgainst", "goalsDifference"]
-    static let columnsWidths: [CGFloat] = [30, 150, 30, 30, 30, 30, 50, 40, 40, 40]
+    static let columnsWidths: [CGFloat] = [30, 150, 40, 40, 40, 40, 50, 40, 40, 40]
 }

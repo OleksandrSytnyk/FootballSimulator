@@ -15,7 +15,7 @@ protocol AddEditTeamViewControllerDelegate: class {
 
 class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
     
-     @IBOutlet public var textField: UITextField?
+     @IBOutlet var textField: UITextField?
     //var addEdit = ""
     var delegate: AddEditTeamViewControllerDelegate?
     var teamToEditName: String?

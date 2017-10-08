@@ -10,15 +10,31 @@ import UIKit
 
 class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
     
-    @IBOutlet public var tableView: UITableView?
-    @IBOutlet public var simulateButton: UIButton?
-    @IBOutlet public var addTeamButton: UIBarButtonItem?
+    @IBOutlet var tableView: UITableView?
+    @IBOutlet var simulateButton: UIButton?
+    @IBOutlet var addTeamButton: UIBarButtonItem?
    
 
     let showAddEdit = "ShowAddEdit"
     let showResult = "ShowResult"
     var teamToEditTeamsIndex: Int?
     var teamsNames: [String] = []
+    var goneToResults = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if goneToResults {
+        goneToResults = false
+        Championship.games = []
+        //Championship.nextTeamID = 0
+        Championship.teams = []
+        Championship.teamsPositions = [:]
+        tableView?.dataSource = nil
+        teamsNames = []
+        tableView?.reloadData()
+        } else {
+        tableView?.dataSource = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,30 +45,28 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         if tableView?.dataSource == nil {
             tableView?.dataSource = self
         }
-        
         if tableView?.delegate == nil {
             tableView?.delegate = self
         }
-         
     }
     
     @IBAction func simulate(_ sender: UIButton) {
+        goneToResults = true
     performSegue(withIdentifier: showResult, sender: sender)
     }
     
     @IBAction func addTeam(_ sender: UIButton) {
-        //addEdit = HomeViewController.add
         performSegue(withIdentifier: showAddEdit, sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == showResult {
-            
+            let controller = segue.destination as? ResultViewController
+            controller?.teams = DataManager.shared.startChampionship(teamsNames: teamsNames)
         } else if segue.identifier == showAddEdit {
             let navigationController = segue.destination as? UINavigationController
             let controller = navigationController?.topViewController as? AddEditTeamViewController
-            //controller?.addEdit = addEdit
             controller?.delegate = self
             
             if let indexPath = sender as? IndexPath {
@@ -75,21 +89,9 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         } else {
             teamsNames.append(teamName)
         }
-        
         tableView?.reloadData()
-        
         dismiss(animated: true, completion: nil)
     }
-    
-//    func addEditTeamViewController(_ controller: AddEditTeamViewController,
-//                                  didFinishEditing team: Team) {
-//        if let index = teams.index(of: team) {
-//            teams[index] = team
-//        }
-//        tableView?.reloadData()
-//        dismiss(animated: true, completion: nil)
-//    }
-
 }
 
 extension HomeViewController : UITableViewDataSource {
@@ -119,8 +121,6 @@ extension HomeViewController : UITableViewDelegate {
         performSegue(withIdentifier: showAddEdit, sender: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
     
     func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCellEditingStyle,

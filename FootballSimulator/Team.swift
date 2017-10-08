@@ -9,7 +9,7 @@
 import Foundation
 
 class Team: Equatable, Hashable {
-    var id: Int
+    var id: Int = 0
     var name = ""
     var gamesWon = 0
     var gamesDrawn = 0

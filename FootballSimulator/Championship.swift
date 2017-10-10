@@ -13,17 +13,15 @@ class Championship {
     
     static var teamsPositions: [Team: Int] = [:]
     static var nextTeamID: Int {
-        get {
-            return teams.count + 1
-        }
+        return teams.count + 1
     }
     
     static var games: [Game] = []
     
     static func startChampionship() {
+        
         for team1 in Championship.teams {
             for team2 in Championship.teams {
-                guard team1 != team2 else { continue }
                 let gameToAdd = Game(team1: team1, team2: team2)
                 
                 if Championship.games.count == 0 {

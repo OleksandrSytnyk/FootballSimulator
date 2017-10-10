@@ -11,6 +11,7 @@
 		D82D238A1F875A0700208E53 /* TeamAsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D23891F875A0700208E53 /* TeamAsResult.swift */; };
 		D82FAFCF1F86448A00211B19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FAFCE1F86448A00211B19 /* DataManager.swift */; };
 		D82FAFD11F865AA100211B19 /* AddEditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FAFD01F865AA100211B19 /* AddEditTeamViewController.swift */; };
+		D832B1481F8BE771000CEF50 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832B1471F8BE771000CEF50 /* Utility.swift */; };
 		D83C59AA1F8492110050055C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59A91F8492110050055C /* AppDelegate.swift */; };
 		D83C59AC1F8492110050055C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C59AB1F8492110050055C /* HomeViewController.swift */; };
 		D83C59AF1F8492110050055C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83C59AD1F8492110050055C /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		D82D23891F875A0700208E53 /* TeamAsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamAsResult.swift; sourceTree = "<group>"; };
 		D82FAFCE1F86448A00211B19 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D82FAFD01F865AA100211B19 /* AddEditTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTeamViewController.swift; sourceTree = "<group>"; };
+		D832B1471F8BE771000CEF50 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D83C59A61F8492110050055C /* FootballSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C59A91F8492110050055C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D83C59AB1F8492110050055C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,25 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		D832B1431F8BD4F2000CEF50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D86BE9BC1F87EF13006404FB /* Game.swift */,
+				D83C59C11F8539A40050055C /* Team.swift */,
+				D83C59C31F8539B30050055C /* Championship.swift */,
+				D82D23891F875A0700208E53 /* TeamAsResult.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D832B1441F8BD569000CEF50 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D832B1471F8BE771000CEF50 /* Utility.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		D83C599D1F8492110050055C = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +125,7 @@
 		D83C59A81F8492110050055C /* FootballSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				D832B1441F8BD569000CEF50 /* Helpers */,
 				D86BE9B91F87B2DC006404FB /* DataLayer */,
 				D83C59BB1F84F5F80050055C /* PresentationLayer */,
 				D83C59BC1F84F64D0050055C /* BusinessLayer */,
@@ -127,11 +149,8 @@
 		D83C59BC1F84F64D0050055C /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
-				D83C59C11F8539A40050055C /* Team.swift */,
-				D83C59C31F8539B30050055C /* Championship.swift */,
+				D832B1431F8BD4F2000CEF50 /* Models */,
 				D82FAFCE1F86448A00211B19 /* DataManager.swift */,
-				D82D23891F875A0700208E53 /* TeamAsResult.swift */,
-				D86BE9BC1F87EF13006404FB /* Game.swift */,
 			);
 			name = BusinessLayer;
 			sourceTree = "<group>";
@@ -271,6 +290,7 @@
 				D82FAFD11F865AA100211B19 /* AddEditTeamViewController.swift in Sources */,
 				D83C59AC1F8492110050055C /* HomeViewController.swift in Sources */,
 				D83C59C41F8539B30050055C /* Championship.swift in Sources */,
+				D832B1481F8BE771000CEF50 /* Utility.swift in Sources */,
 				D86BE9BD1F87EF13006404FB /* Game.swift in Sources */,
 				D83C59AA1F8492110050055C /* AppDelegate.swift in Sources */,
 				D86BE9BB1F87B322006404FB /* DataSource.swift in Sources */,

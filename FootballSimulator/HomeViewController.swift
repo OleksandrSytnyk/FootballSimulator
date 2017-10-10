@@ -27,11 +27,9 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
         Championship.games = []
         Championship.teams = []
         Championship.teamsPositions = [:]
-        tableView?.dataSource = nil
+        teamsNames = []
         teamsNames = []
         tableView?.reloadData()
-        } else {
-        tableView?.dataSource = self
         }
     }
 
@@ -52,12 +50,7 @@ class HomeViewController: UIViewController, AddEditTeamViewControllerDelegate {
     }
     
     func showNumberOfTeamRequest() {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Sorry...", comment: "Error alert: title"),
-            message: NSLocalizedString("To continue, you have to choose from 4 to 8 clubs to participate. Use the '+' button for this.", comment: "Validation alert: message"), preferredStyle: .alert)
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Validation alert: OK"), style: .default, handler: nil)
-        alert.addAction(action)
-        
+        let alert = getValidationAlert(message: "To continue, you have to choose from 4 to 8 clubs to participate. Use the '+' button for this.")
         present(alert, animated: true, completion: nil)
     }
     

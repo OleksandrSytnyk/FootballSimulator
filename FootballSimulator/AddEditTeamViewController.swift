@@ -23,6 +23,8 @@ class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "AddTeam" 
+        
         self.textField?.delegate = self
         textField?.becomeFirstResponder()
         
@@ -62,52 +64,19 @@ class AddEditTeamViewController: UIViewController, UITextFieldDelegate {
     func validate(text: String) -> Bool {
         
         guard  (text.characters.count > 0) && (text.characters.count < 26) else {
-            showLengthOfTeamNameRequest()
+            let alert = getValidationAlert(message: "The length of the team name has to be more than zero and no more than 25 characters.")
+            present(alert, animated: true, completion: nil)
             return false
         }
         guard text.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil  else {
-            showAlphanumericsRequest()
+            let alert = getValidationAlert(message: "The team name can contain only alphabetic and numeric characters.")
+            present(alert, animated: true, completion: nil)
             return false
         }
         guard let teamNames = teamNames else { return true }
         guard teamNames.contains(text) else { return true }
-            showUnicityOfTeamNameRequest()
+            let alert = getValidationAlert(message: "The list of teams you chosed contains already this name. Choose another one.")
+            present(alert, animated: true, completion: nil)
             return false
-    }
-    
-    func showLengthOfTeamNameRequest() {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Sorry...", comment: "Validation alert: title"),
-            message: NSLocalizedString("The length of the team name has to be more than zero and no more than 25 characters.", comment: "Validation alert: message"),
-            preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Error alert: OK"), style: .default, handler: nil)
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showAlphanumericsRequest() {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Sorry...", comment: "Validation alert: title"),
-            message: NSLocalizedString("The team name can contain only alphabetic and numeric characters.", comment: "Validation alert: message"),
-            preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Validation alert: OK"), style: .default, handler: nil)
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showUnicityOfTeamNameRequest() {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Sorry...", comment: "Validation alert: title"),
-            message: NSLocalizedString("The list of teams you chosed contains already this name. Choose another one.", comment: "Validation alert: message"),
-            preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Validation Validation: OK"), style: .default, handler: nil)
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
     }
 }

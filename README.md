@@ -10,7 +10,7 @@ FootballSimulator is an application which simulates small football championship 
 **Screens**
 * Splash screen should contain application name and description
 * Home screen should consists of the list of selected teams, button “+” to add team and button “Simulate” to proceed to results. When no teams are added screen should contain text “Please add from 4 to 8 teams to start simulation” instead of the empty list
-* Result screen should contain a resulting table (similar to Barclay’s Premier League) with next data:
+* Result screen should contain a resulting table (similar to [Barclay’s Premier League](https://www.premierleague.com/tables?co=1&se=54&mw=-1&ha=-1)) with next data:
   - Position (#)
   - Team name (Team)
   - Games played (P)
@@ -59,7 +59,7 @@ For instance, the results are:
 	
 So, resulting table should look like:
 
-**Main requirements**
+Main requirements
 
 | # | Team name | P | W | D | L | Pts |
 |---|-----------|---|---|---|---|-----|
@@ -68,7 +68,7 @@ So, resulting table should look like:
 | 3 | Team 3    | 3 | 1 | 0 | 2 | 3   |
 | 4 | Team 4    | 3 | 0 | 0 | 3 | 0   |
 
-**Additional requirements**
+Additional requirements
 
 | # | Team name | P | W | D | L | GF | GA | GD | Pts |
 |---|-----------|---|---|---|---|----|----|----|-----|

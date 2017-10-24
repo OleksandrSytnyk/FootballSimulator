@@ -52,6 +52,7 @@ For instance, the results are:
 So, resulting table should look like:
 
 Main requirements
+
 | # | Team name | P | W | D | L | Pts |
 |---|-----------|---|---|---|---|-----|
 | 1 | Team 1    | 3 | 3 | 0 | 0 | 9   |
@@ -60,6 +61,7 @@ Main requirements
 | 4 | Team 4    | 3 | 0 | 0 | 3 | 0   |
 
 Additional requirements
+
 | # | Team name | P | W | D | L | GF | GA | GD | Pts |
 | 1 | Team 1    | 3 | 3 | 0 | 0 | 12 | 3  |  9 | 9   |
 | 2 | Team 2    | 3 | 2 | 0 | 1 | 7  | 3  | 4  | 6   |

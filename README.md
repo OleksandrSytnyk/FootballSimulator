@@ -1,10 +1,10 @@
 # FootballSimulator
 FootballSimulator is an application which simulates small football championship between 4-8 teams.
-###Scenario
-	*	User enters the list of teams (not less than 4, but not more than 8)
-	*	User clicks “Simulate” button
-	*	User see the resulting table with sorted list: first team with highest score, last team with lowest
-	*	User can start over the championship
+Scenario
+* User enters the list of teams (not less than 4, but not more than 8)
+* User clicks “Simulate” button
+* User see the resulting table with sorted list: first team with highest score, last team with lowest
+* User can start over the championship
 Screens
 	•	Splash screen should contain application name and description
 	•	Home screen should consists of the list of selected teams, button “+” to add team and button “Simulate” to proceed to results. When no teams are added screen should contain text “Please add from 4 to 8 teams to start simulation” instead of the empty list

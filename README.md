@@ -63,6 +63,7 @@ Main requirements
 Additional requirements
 
 | # | Team name | P | W | D | L | GF | GA | GD | Pts |
+|---|-----------|---|---|---|---|----|----|----|-----|
 | 1 | Team 1    | 3 | 3 | 0 | 0 | 12 | 3  |  9 | 9   |
 | 2 | Team 2    | 3 | 2 | 0 | 1 | 7  | 3  | 4  | 6   |
 | 3 | Team 3    | 3 | 1 | 0 | 2 | 1  | 5  | -4 | 3   |

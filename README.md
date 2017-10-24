@@ -9,12 +9,12 @@ Screens
 * Splash screen should contain application name and description
 * Home screen should consists of the list of selected teams, button “+” to add team and button “Simulate” to proceed to results. When no teams are added screen should contain text “Please add from 4 to 8 teams to start simulation” instead of the empty list
 * Result screen should contain a resulting table (similar to Barclay’s Premier League) with next data:
-	◦	Position (#)
-	◦	Team name (Team)
-	◦	Games played (P)
-	◦	Game won (W)
-	◦	Game drawn (D)
-	◦	Game Lost (L)
+  - Position (#)
+  - Team name (Team)
+  - Games played (P)
+  - Game won (W)
+  - Game drawn (D)
+  - Game Lost (L)
 	◦	Points (Pts)
 Main requirements
 	•	Each team should play one game with all other teams. The results should be randomized

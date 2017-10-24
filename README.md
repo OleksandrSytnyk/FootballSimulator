@@ -6,9 +6,9 @@ Scenario
 * User see the resulting table with sorted list: first team with highest score, last team with lowest
 * User can start over the championship
 Screens
-	•	Splash screen should contain application name and description
-	•	Home screen should consists of the list of selected teams, button “+” to add team and button “Simulate” to proceed to results. When no teams are added screen should contain text “Please add from 4 to 8 teams to start simulation” instead of the empty list
-	•	Result screen should contain a resulting table (similar to Barclay’s Premier League) with next data:
+* Splash screen should contain application name and description
+* Home screen should consists of the list of selected teams, button “+” to add team and button “Simulate” to proceed to results. When no teams are added screen should contain text “Please add from 4 to 8 teams to start simulation” instead of the empty list
+* Result screen should contain a resulting table (similar to Barclay’s Premier League) with next data:
 	◦	Position (#)
 	◦	Team name (Team)
 	◦	Games played (P)

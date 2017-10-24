@@ -1,6 +1,6 @@
 # FootballSimulator
 FootballSimulator is an application which simulates small football championship between 4-8 teams.
-Scenario
+###Scenario
 	*	User enters the list of teams (not less than 4, but not more than 8)
 	*	User clicks “Simulate” button
 	*	User see the resulting table with sorted list: first team with highest score, last team with lowest
